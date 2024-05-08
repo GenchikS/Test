@@ -167,11 +167,11 @@
 // console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
 
 
-const planets = ["Earth", "Mars", "Venus"];
+// const planets = ["Earth", "Mars", "Venus"];
 
-for (const planet of planets) {
-  console.log(planet);
-}
+// for (const planet of planets) {
+//   console.log(planet);
+// }
 
 
 
