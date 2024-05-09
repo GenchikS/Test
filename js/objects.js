@@ -230,31 +230,76 @@ for (let key in obj) {
 // console.log(getProductPrice("Engine"));
 
 
-function getAllPropValues(propName) {
-  const products = [
-    { name: "Radar", price: 1300, quantity: 4 },
-    { name: "Scanner", price: 2700, quantity: 3 },
-    { name: "Droid", price: 400, quantity: 7 },
-    { name: "Grip", price: 1200, quantity: 9 },
-  ];
+// function getAllPropValues(propName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
 
-  const returnMas = [];
+//   const returnMas = [];
  
-  for (const product of products) {
-    const productObj = Object.keys(product);
-    const productVal = Object.values(product);
-    // console.log(productObj);  // перевірка властивості об'єктів
-    // console.log(productVal);   //перевірка свойств властивостей об'єктів
-    for (const key in productObj) {
-      if (productObj[key] === propName) {
-        returnMas.push(productVal[key])
-        }
-      }
-  }
-return returnMas;
-}
+//   for (const product of products) {
+//     const productObj = Object.keys(product);
+//     const productVal = Object.values(product);
+//     // console.log(productObj);  // перевірка властивості об'єктів
+//     // console.log(productVal);   //перевірка свойств властивостей об'єктів
+//     for (const key in productObj) {
+//       if (productObj[key] === propName) {
+//         returnMas.push(productVal[key])
+//         }
+//       }
+//   }
+// return returnMas;
+// }
 
-console.log(getAllPropValues("name"));
-console.log(getAllPropValues("quantity"));
-console.log(getAllPropValues("price"));
-console.log(getAllPropValues("category"));
+// console.log(getAllPropValues("name"));
+// console.log(getAllPropValues("quantity"));
+// console.log(getAllPropValues("price"));
+// console.log(getAllPropValues("category"));
+
+
+// function calculateTotalPrice(productName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+
+  
+//   let productSum;
+//   const productMas = [];
+//   const productPric = [];
+//   const productQuan = [];
+
+//   for (const product of products) {
+//     productMas.push(product.name);
+//     productPric.push(product.price);
+//     productQuan.push(product.quantity);
+//   }
+//   for (const product1 of products) {
+//     if (productMas.includes(productName)) {
+//       for (const key in productMas) {
+//         if (productMas[key] === productName) {
+//           productSum = productPric[key] * productQuan[key];
+//         }
+//       }
+//     }
+//     else {
+//         productSum = `Product ${productName} not found!`;
+//         return productSum;
+//       }
+//     return productSum;
+//   }
+//   }
+  
+
+// console.log(calculateTotalPrice("Radar"));
+// console.log(calculateTotalPrice("Droid"));
+// console.log(calculateTotalPrice("Grip"));
+// console.log(calculateTotalPrice("Scanner"));
+// console.log(calculateTotalPrice("Blaster"));
+
+
