@@ -82,18 +82,18 @@
 // };
 
 
-const obj = {
-  width: 300,
-  height: 200,
-  title: "Menu"
-}
+// const obj = {
+//   width: 300,
+//   height: 200,
+//   title: "Menu"
+// }
 
-for (let key in obj) {
-  if(obj.hasOwnProperty(key)){
-    console.log(`${key}`);
-    // console.log(`${key} : ${obj[key]}`)
-  }
-}
+// for (let key in obj) {
+//   if(obj.hasOwnProperty(key)){
+//     console.log(`${key}`);
+//     // console.log(`${key} : ${obj[key]}`)
+//   }
+// }
 
 
 // const apartment = {
@@ -303,3 +303,136 @@ for (let key in obj) {
 // console.log(calculateTotalPrice("Blaster"));
 
 
+// const obj = {
+// 	method(value) {
+// 		console.log(`I'm a method with ${value}!`);
+// 	}
+// };
+
+// obj.method(5); // "I'm a method with 5!"
+// obj.method(10); // "I'm a method with 10!"
+
+
+
+// const atTheOldToad = {
+//   potions: [],
+//   getPotions() {
+//     return `List of all available potions`
+//   },
+//   addPotion(potionName) {
+//     return `Adding ${potionName}`
+//   },
+// }
+
+
+// console.log(atTheOldToad.getPotions());
+// console.log(atTheOldToad.addPotion("Invisibility"));
+// console.log(atTheOldToad.addPotion("Power potion"));
+
+
+// const bookShelf = {
+//   books: [
+//     { title: "The Last Kingdom", rating: 8 },
+//     { title: "The Mist", rating: 6 }
+//   ],
+//   getBooks() {
+//     return this.books;
+//   },
+//   addBook(newBook) {
+//     this.books.push(newBook);
+//   },
+// };
+
+// bookShelf.addBook({ title: "Dream Guardian", rating: 9 });
+// console.log(bookShelf.getBooks());
+
+
+// const bookShelf = {
+//   books: [
+//     { title: "The Last Kingdom", rating: 8 },
+//     { title: "The Mist", rating: 6 },
+//   ],
+//   getAvarageRating() {
+//     let totalRating = 0;
+//     for (const book of this.books) {
+//       totalRating += book.rating;
+//     }
+//     return totalRating / this.books.length; // ділення
+//   },
+// };
+
+// console.log(bookShelf.getAvarageRating()); // 7
+
+
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+//   getPotions() {
+//     return this.potions;
+//   },
+//   addPotion(newPotion) {
+//     this.potions.push(newPotion);
+//   },
+//   getTotalPrice() {
+//     let TotalPriceSum = 0;
+//     for (const poti of this.potions){
+//       TotalPriceSum += poti.price;
+//     }
+//     return TotalPriceSum;
+//   },
+// };
+
+// atTheOldToad.addPotion({ name: "Invisibility", price: 620 });
+// console.log(atTheOldToad.getPotions());
+// atTheOldToad.addPotion({ name: "Power potion", price: 270 });
+// console.log(atTheOldToad.getPotions());
+// console.log(atTheOldToad.getTotalPrice());
+
+
+const bookShelf = {
+  books: [
+    { title: "The Last Kingdom", rating: 8 },
+    { title: "The Mist", rating: 6 },
+  ],
+  
+  changeRating(bookName, newRating) {
+    for (const book of this.books) {
+      // console.log(book.title);  // перевірка до
+      // console.log(book.rating);  // перевірка до
+      if (book.title === bookName) {
+       book.rating = newRating;
+        // console.log(book.rating); // перевірка після
+      };
+    };
+    return this.books;
+	},
+};
+
+console.log(bookShelf.changeRating("The Mist", 9));
+console.log(bookShelf.changeRating("The Last Kingdom", 4));
+
+
+
+const atTheOldToad = {
+  potions: [
+    { name: "Speed potion", price: 460 },
+    { name: "Stone skin", price: 520 },
+  ],
+  getPotions() {
+    return this.potions;
+  },
+  updatePotionName(oldName, newName) {
+    for (const poti of this.potions) {
+      // console.log(poti);
+      if (poti.name === oldName) {
+        poti.name = newName;
+      }
+    }
+    return this.potions;
+  },
+};
+
+console.log(atTheOldToad.updatePotionName("Stone skin", "Invisibility"));
+console.log(atTheOldToad.updatePotionName("Speed potion", "Polymorth"));
