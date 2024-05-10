@@ -391,48 +391,102 @@
 // console.log(atTheOldToad.getTotalPrice());
 
 
-const bookShelf = {
-  books: [
-    { title: "The Last Kingdom", rating: 8 },
-    { title: "The Mist", rating: 6 },
-  ],
+// const bookShelf = {
+//   books: [
+//     { title: "The Last Kingdom", rating: 8 },
+//     { title: "The Mist", rating: 6 },
+//   ],
   
-  changeRating(bookName, newRating) {
-    for (const book of this.books) {
-      // console.log(book.title);  // перевірка до
-      // console.log(book.rating);  // перевірка до
-      if (book.title === bookName) {
-       book.rating = newRating;
-        // console.log(book.rating); // перевірка після
-      };
-    };
-    return this.books;
-	},
-};
+//   changeRating(bookName, newRating) {
+//     for (const book of this.books) {
+//       // console.log(book.title);  // перевірка до
+//       // console.log(book.rating);  // перевірка до
+//       if (book.title === bookName) {
+//        book.rating = newRating;
+//         // console.log(book.rating); // перевірка після
+//       };
+//     };
+//     return this.books;
+// 	},
+// };
 
-console.log(bookShelf.changeRating("The Mist", 9));
-console.log(bookShelf.changeRating("The Last Kingdom", 4));
+// console.log(bookShelf.changeRating("The Mist", 9));
+// console.log(bookShelf.changeRating("The Last Kingdom", 4));
 
 
 
-const atTheOldToad = {
-  potions: [
-    { name: "Speed potion", price: 460 },
-    { name: "Stone skin", price: 520 },
-  ],
-  getPotions() {
-    return this.potions;
-  },
-  updatePotionName(oldName, newName) {
-    for (const poti of this.potions) {
-      // console.log(poti);
-      if (poti.name === oldName) {
-        poti.name = newName;
-      }
-    }
-    return this.potions;
-  },
-};
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+//   getPotions() {
+//     return this.potions;
+//   },
+//   updatePotionName(oldName, newName) {
+//     for (const poti of this.potions) {
+//       // console.log(poti);
+//       if (poti.name === oldName) {
+//         poti.name = newName;
+//       }
+//     }
+//     return this.potions;
+//   },
+// };
 
-console.log(atTheOldToad.updatePotionName("Stone skin", "Invisibility"));
-console.log(atTheOldToad.updatePotionName("Speed potion", "Polymorth"));
+// console.log(atTheOldToad.updatePotionName("Stone skin", "Invisibility"));
+// console.log(atTheOldToad.updatePotionName("Speed potion", "Polymorth"));
+
+
+// function add(...args) {
+//   let Sum = 0;
+//   console.log(args);
+//   for (const key in args) {
+//     console.log(args[key]);
+//     Sum += args[key];
+//   };
+//   return Sum;
+// };
+
+// console.log(add(15, 27));
+// console.log(add(12, 4, 11, 48));
+
+
+// function addOverNum(value, ...args) {
+//   console.log(value);
+//   console.log(args);
+//   let Sum = 0;
+//   for (const key in args) {
+//     if (value < args[key]) {
+//       Sum += args[key];
+//     }
+//   }
+//   return Sum;
+// }
+
+// console.log(addOverNum(10, 12, 4, 11, 48, 10, 8));
+// console.log(addOverNum(15, 32, 6, 13, 19, 8));
+
+
+// function getExtremeScores(scores) {
+//   let best = Math.max(...scores);
+//   let worst = Math.min(...scores);
+//   // console.log(best);
+//   // console.log(worst);
+//   const result = { best, worst };
+//   return result;
+//  }
+
+// console.log(getExtremeScores([89, 64, 42, 17, 93, 51, 26]));
+
+
+const firstGroupScores = [64, 42, 93];
+const secondGroupScores = [89, 14, 51, 26];
+const thirdGroupScores = [29, 47, 18, 97, 81];
+
+const allScores = [...firstGroupScores, ...secondGroupScores, ...thirdGroupScores];
+const bestScore = Math.max(...allScores);
+const worstScore = Math.min(...allScores);
+console.log(allScores);
+console.log(bestScore);
+console.log(worstScore);
