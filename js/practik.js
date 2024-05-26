@@ -20,10 +20,10 @@
 // const a = txt.slice(10, 16);
 // console.log(a);
 
-let txt = "Hello World";
-console.log(txt);
-const txtAll = txt.replace("Hello", "Welcome");
-console.log(txtAll);
+// let txt = "Hello World";
+// console.log(txt);
+// const txtAll = txt.replace("Hello", "Welcome");
+// console.log(txtAll);
 
 // // const cars = ["Volvo", "Jeep", "Mercedes"];
 // // alert([...cars]);
@@ -113,16 +113,24 @@ console.log(txtAll);
 // console.log(fructs(fruits))
 
 // варіант 2
-const fruits = ["Apple", "Banana", "Grapes", "Apple", "Apple", "Banana", "Pineapple", "Grapes", "Kiwi", "Apple"];
-    console.log(fruits);
-function fructs(users) {
-    const result = [];
-    for (let i = 0; i < users.length; i++){
-        if (!result.includes(users[i])) {
-            result.push(users[i]);
-        }
-    }
-    return result;
-}
+// const fruits = ["Apple", "Banana", "Grapes", "Apple", "Apple", "Banana", "Pineapple", "Grapes", "Kiwi", "Apple"];
+//     console.log(fruits);
+// const fructs = [];
+// fruits.forEach(function (number) {
+//     if (!fructs.includes(number)){
+//         fructs.push(number)
+//     };
+// });
+//     console.log(fructs);
 
-console.log(fructs(fruits))
+
+// const numbers = [5, 10, 15, 20, 25];
+// // Класичний for
+// for (let i = 0; i < numbers.length; i += 1) {
+//   console.log(`Index ${i}, value ${numbers[i]}`);
+// }
+
+// Перебираючий метод forEach
+// numbers.forEach(function (number) {
+//   console.log(`value ${number}`);
+// });

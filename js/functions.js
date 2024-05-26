@@ -8,13 +8,13 @@
 
 
 
-function getOrderQuantity(order) {
-    console.log(order.length);
-    // console.log(order[order.length - 1]);
-    return order.length;
-}
-console.log(getOrderQuantity(["apple", "peach", "pear", "banana"]));
-console.log(getOrderQuantity(["apple", "banana", "pear"]));
+// function getOrderQuantity(order) {
+//     console.log(order.length);
+//     // console.log(order[order.length - 1]);
+//     return order.length;
+// }
+// console.log(getOrderQuantity(["apple", "peach", "pear", "banana"]));
+// console.log(getOrderQuantity(["apple", "banana", "pear"]));
 
 
 // function getLastElementMeta(array) {
