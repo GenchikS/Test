@@ -25,14 +25,14 @@ console.log(txt);
 const txtAll = txt.replace("Hello", "Welcome");
 console.log(txtAll);
 
-// const cars = ["Volvo", "Jeep", "Mercedes"];
-// alert([...cars]);
+// // const cars = ["Volvo", "Jeep", "Mercedes"];
+// // alert([...cars]);
 
-const fruits = ["Banana", "Orange", "Apple", "Kiwi"];
-console.log(fruits.sort()); //['Apple', 'Banana', 'Kiwi', 'Orange']
+// const fruits = ["Banana", "Orange", "Apple", "Kiwi"];
+// console.log(fruits.sort()); //['Apple', 'Banana', 'Kiwi', 'Orange']
 
-const d = new Date();
-console.log(d);
+// const d = new Date();
+// console.log(d);
 // year = new Date().getFullYear();
 // console.log(year);
 
@@ -60,4 +60,69 @@ console.log(d);
 // // console.log(inp(400,200));
 
 
+// function numb(a) {
+//     const result = [];
+//     for (let i = 1; i < a; i += 1) {
+//         if (!Number.isInteger(i / 2)) {
+//             //   if (i % 2 !== 0 ) {
+//             result.push(i);
+//         }
+//     };
+//     return (`Кількість позитивних непарних чисел, менших за число ${a}: ${result.length}`);
+// }
 
+// console.log(numb(11));
+
+// function nechet(numb) {
+//   let nechNum = [];
+//   for (let i = numb - 1; i > 0; i--) {
+//     if (i % 2 === 1) {
+//       nechNum.push(i);
+//     }}
+//   console.log("количество положительных нечетных чисел-", nechNum.length);
+// }
+
+//  console.log(nechet(1));
+
+
+// function inp(a, b) {
+//     let result = a <= b ? b : a;
+//     console.log(result);
+//     for (let i = result; i >= result; i += 1)
+//         if (i % a === 0 && i % b === 0) {
+//             result = i;
+//         return alert(`Найменший число на яке ділиться ${a} і ${b}: ${result}`);
+//         }
+// };
+
+// console.log(inp(4,30));
+
+// варіант 1
+// const fruits = ["Apple", "Banana", "Grapes", "Apple", "Apple", "Banana", "Pineapple", "Grapes", "Kiwi", "Apple"];
+//     console.log(fruits);
+// function fructs(users) {
+//     const result = [];
+//     for (let i = 0; i < users.length; i++){
+//         if (!result.includes(users[i])) {
+//             result.push(users[i]);
+//         }
+//     }
+//     return result;
+// }
+
+// console.log(fructs(fruits))
+
+// варіант 2
+const fruits = ["Apple", "Banana", "Grapes", "Apple", "Apple", "Banana", "Pineapple", "Grapes", "Kiwi", "Apple"];
+    console.log(fruits);
+function fructs(users) {
+    const result = [];
+    for (let i = 0; i < users.length; i++){
+        if (!result.includes(users[i])) {
+            result.push(users[i]);
+        }
+    }
+    return result;
+}
+
+console.log(fructs(fruits))
