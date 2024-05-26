@@ -118,7 +118,7 @@ const promouters = [
     },
 ]
 
-const company = prompt(`Введіть компанію (анл. літерами) в якій працює співробітника:`).toLowerCase();
+const company = prompt(`Введіть компанію (анл. літерами) в якій працює співробітник:`).toLowerCase();
 if (company === "samsung") {
     const userIn = prompt(`Введіть mcs ID співробітника:`);
     const names = promouters.map(promo => promo.mcsId);
