@@ -120,14 +120,21 @@ const promouters = [
 
 const company = prompt(`Введіть компанію (анл. літерами) в якій працює співробітник:`).toLowerCase();
 if (company === "samsung") {
-    const userIn = prompt(`Введіть mcs ID співробітника:`);
+    const userIn = prompt(`Введіть mcs ID співробітника:`).toLowerCase();
     const names = promouters.map(promo => promo.mcsId); // зібрали в масив властивість ключа mcsId
     if (names.includes(userIn)) {
         for (const prom of promouters) {  //  перебераємо масив promouters по кожному об'єкту
-            if (userIn === prom.mcsId) {
-                alert(`Щоб побачити дані обраного співробітника (натисніть F12):`);
-                console.log(Object(prom));
-        };
+            if (userIn === prom.mcsId) {  //  перевіряє введений mcsId з mcsId в масиві promouters з ключем mcsId
+                if (userIn === "s.shulga") {  // перевіряє чи mcsId являється керівником
+                   const userRffm = prompt(`Ви намагаєтесь отримати доступ до данних курівника підрозділу. Підтвердіть свою особу вказавши своє прізвище (укр. мовою):`).toLowerCase(); 
+                    if (userRffm === "іванович") {  // перевірка додаткового паролю керівника
+                    alert(`Дякую, Сергію Івановичу, ви підтвердили свою особу. Щоб побачити дані (натисніть OK, а потім F12):`);
+                    console.log(Object(prom));
+                    };
+                } else {
+                    alert(`Щоб побачити дані обраного співробітника (натисніть OK, а потім F12):`); //  вивід решти даних, окрім керівника 
+                console.log(Object(prom));};
+            };
         };
     } else {
         console.log(alert(`Данного співробітника: ${userIn} не знайдено. Спробуйте заново.`));
