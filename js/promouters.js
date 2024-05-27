@@ -121,20 +121,18 @@ const promouters = [
 const company = prompt(`Введіть компанію (анл. літерами) в якій працює співробітник:`).toLowerCase();
 if (company === "samsung") {
     const userIn = prompt(`Введіть mcs ID співробітника:`);
-    const names = promouters.map(promo => promo.mcsId);
-
+    const names = promouters.map(promo => promo.mcsId); // зібрали в масив властивість ключа mcsId
     if (names.includes(userIn)) {
-        console.log(`Ви обрали співробітника: ${userIn}`);
-    } else {
-        console.log(`Данного співробітника: ${userIn} не знайдено. Спробуйте заново.`);
-    };
-    for (const prom of promouters) {
-        if (userIn === prom.mcsId) {
-            const user = Object(prom);
-            console.log(`Дані обраного співробітника:`, user);
+        for (const prom of promouters) {  //  перебераємо масив promouters по кожному об'єкту
+            if (userIn === prom.mcsId) {
+                alert(`Щоб побачити дані обраного співробітника (натисніть F12):`);
+                console.log(Object(prom));
         };
+        };
+    } else {
+        console.log(alert(`Данного співробітника: ${userIn} не знайдено. Спробуйте заново.`));
     };
-} else {
-    console.log(`Данну компанію: ${company} не знайдено. Спробуйте заново.`);
+    } else {
+    console.log(alert(`Данну компанію: ${company} не знайдено. Спробуйте заново.`));
 }
     
