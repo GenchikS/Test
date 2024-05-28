@@ -156,13 +156,22 @@
 // console.log(mango); // {}
 
 // приклад різного запиту в один constructor
-class Car {
-  constructor (brand, model, price){
-    this.brand = brand;
-    this.model = model;
-    this.price = price;
-  };
-};
+// class Car {
+//   // constructor(brand, model, price) {
+//     constructor (brand, model, price){
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   };
+// };
 
-console.log(new Car("Audi", "Q3", 36000)); // {brand: "Audi", model: "Q3", price: 36000}
-console.log(new Car("BMW", "X5", 58900));  // {brand: "BMW", model: "X5", price: 58900}
+// console.log(new Car("Audi", "Q3", 36000)); // {brand: "Audi", model: "Q3", price: 36000}
+// console.log(new Car("BMW", "X5", 58900));  // {brand: "BMW", model: "X5", price: 58900}
+
+const userName = prompt(`Введіть своє призвіще (укр. мовою):`);
+const userAll = userName.toLowerCase();
+if (userAll === "городецька") {
+  alert(`${userName} Геннадій вас любить`);
+} else {
+  alert(`${userName} Геннадій вас не любить`);
+}
