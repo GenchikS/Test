@@ -40,6 +40,7 @@
 
 // userA.showContext = showThis;  // 1.userA скопійовано ф-цію showThis (не визвано, бо () вітсутні)
 // // console.log(user.showContext);
+
 // const userB = {
 //   username: "Key",
 // };
@@ -57,11 +58,37 @@
 // const object = {
 //   message: 'Hello, World',
 //   getMessage() {
-//     const message = 'Hello, Earth';  // оголошена змінна, а не перевизначення ключа
+//     const message = 'Hello, Earth';  // оголошена змінна в ф-ції, а не перевизначення ключа та звернення до змінної об'єкту, а не ф-ції
 //     return this.message;
 //   },
 // };
 // console.log(object.getMessage()); //  'Hello, World'
+
+
+
+// //  приклад 1 простий
+// const person = {
+//   name: "Alice",
+//   hello() {
+//     console.log(`1.`, this);
+//   }
+// };
+
+// console.log(person.hello());
+
+// приклад 2, ф-ція arrow всередині ф-ції declaration
+const person = {
+  name: "Alice",
+  hello() {
+    console.log(`1.`, this);
+    const arrowFn = () => {
+      console.log(`arrowFn`, this);
+    }
+    arrowFn();
+  }
+};
+
+console.log(person.hello());
 
 
 
@@ -110,28 +137,26 @@
 //       console.log(this);
 //       // console.log(this.name);
 //     };
-//     hello();
+//     hello();  //   об'єкт не має свого контексту, тільки ф-ція, тому має бути завжді в ф-ції
 // }
-  
+       
 // }
 // person.wrapper(); // 1. wrapper визначається як function declaration, тому посилається на об'єкт який його викликав (person)
 
 
 //  приклад 2, коли ф-ція wrapper() оголошена за межами виклику
 
-const hello = () => {  //  ф-ція створена в рамках глобальному контексту. Відповідно і this буде братися з глобального контексту
-  console.log(this);
-};
+// const hello = () => {  //  ф-ція створена в рамках глобальному контексту. Відповідно і this буде братися з глобального контексту
+//   console.log(this);  //  якщо працюємо не всередині ф-ції, то це посилання на методи window
+// };
    
-const person = {
-  name: "Alice",
-  wrapper() {
-    hello() //  виклик глобального контексту => undef
-  }
-}
-  
-
-person.wrapper(); // 1. wrapper визначається як function declaration, тому посилається на об'єкт який його викликав (person)
+// const person = {
+//   name: "Alice",
+//   wrapper() {
+//     hello() //  виклик глобального контексту => undef  //  також виклик стрілочної ф-ції має бути завжди в ф-ції (як в цьому прикладу)
+//   }
+// }
+// person.wrapper(); // 1. wrapper визначається як function declaration, тому посилається на об'єкт який його викликав (person)
 
 
 
