@@ -241,7 +241,7 @@ console.log(person.hello());
 // console.log(poly); // {}
 
 
-
+//  ----- CLASS -----
 // class User {
 //   constructor(name, email) {
 //     console.log(name, email);
@@ -254,7 +254,6 @@ console.log(person.hello());
 
 // приклад різного запиту в один constructor
 // class Car {
-//   // constructor(brand, model, price) {
 //     constructor (brand, model, price){
 //     this.brand = brand;
 //     this.model = model;
@@ -328,3 +327,50 @@ console.log(person.hello());
 // }
 
 // console.log(new Car({ brand: "Audi", model: "Q3", price: 36000 })) // { model: "Q3", price: 36000 }
+
+
+//  приклад статичного методу
+class Car {
+  static #maxPrice = 50000;
+  static checkPrice(price) {
+    if(price > Car.#maxPrice){
+      return "Error! Price exceeds the maximum";
+    }
+    return "Success! Price is within acceptable limits";
+  }
+  constructor(params) {
+    this.price = params.price;
+  }
+}
+
+const audi = new Car({ price: 36000 });
+const bmw = new Car({ price: 64000 });
+
+console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+
+
+// приклад наслідування класів + додаткові власні властивості
+class User {
+  #email;
+
+  constructor(email) {
+    this.#email = email;
+  }
+
+  get email() {
+    return this.#email;
+  }
+
+  set email(newEmail) {
+    this.#email = newEmail;
+  }
+}
+
+class ContentEditor extends User {
+	// Тіло класу ContentEditor
+}
+
+const editor = new ContentEditor("mango@mail.com");
+console.log(editor); // { #email: "mango@mail.com" }
+console.log(editor.email); // "mango@mail.com"
