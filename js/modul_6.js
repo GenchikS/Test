@@ -77,18 +77,18 @@
 // console.log(person.hello());
 
 // приклад 2, ф-ція arrow всередині ф-ції declaration
-const person = {
-  name: "Alice",
-  hello() {
-    console.log(`1.`, this);
-    const arrowFn = () => {
-      console.log(`arrowFn`, this);
-    }
-    arrowFn();
-  }
-};
+// const person = {
+//   name: "Alice",
+//   hello() {
+//     console.log(`1.`, this);
+//     const arrowFn = () => {
+//       console.log(`arrowFn`, this);
+//     }
+//     arrowFn();
+//   }
+// };
 
-console.log(person.hello());
+// console.log(person.hello());
 
 
 
@@ -330,47 +330,156 @@ console.log(person.hello());
 
 
 //  приклад статичного методу
-class Car {
-  static #maxPrice = 50000;
-  static checkPrice(price) {
-    if(price > Car.#maxPrice){
-      return "Error! Price exceeds the maximum";
-    }
-    return "Success! Price is within acceptable limits";
-  }
-  constructor(params) {
-    this.price = params.price;
-  }
-}
+// class Car {
+//   static #maxPrice = 50000;
+//   static checkPrice(price) {
+//     if(price > Car.#maxPrice){
+//       return "Error! Price exceeds the maximum";
+//     }
+//     return "Success! Price is within acceptable limits";
+//   }
+//   constructor(params) {
+//     this.price = params.price;
+//   }
+// }
 
-const audi = new Car({ price: 36000 });
-const bmw = new Car({ price: 64000 });
+// const audi = new Car({ price: 36000 });
+// const bmw = new Car({ price: 64000 });
 
-console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
-console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+// console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+// console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
 
 
 // приклад наслідування класів + додаткові власні властивості
-class User {
-  #email;
+// class User {
+//   #email;
 
-  constructor(email) {
-    this.#email = email;
-  }
+//   constructor(email) {
+//     this.#email = email;
+//   }
 
-  get email() {
-    return this.#email;
-  }
+//   get email() {
+//     return this.#email;
+//   }
 
-  set email(newEmail) {
-    this.#email = newEmail;
-  }
-}
+//   set email(newEmail) {
+//     this.#email = newEmail;
+//   }
+// }
 
-class ContentEditor extends User {
-	// Тіло класу ContentEditor
-}
+// class ContentEditor extends User {
+// 	// Тіло класу ContentEditor
+// }
 
-const editor = new ContentEditor("mango@mail.com");
-console.log(editor); // { #email: "mango@mail.com" }
-console.log(editor.email); // "mango@mail.com"
+// const editor = new ContentEditor("mango@mail.com");
+// console.log(editor); // { #email: "mango@mail.com" }
+// console.log(editor.email); // "mango@mail.com"
+
+
+
+// class User {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   };
+
+//   showName() {
+//     console.log(`Hello ${this.name}. Me ${this.age} age`);
+//   }
+// }
+
+// const allName = new User(`Alice`, 30);
+// console.log(allName);
+// console.log(allName.showName());
+
+
+// class User {
+//   email;
+
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+
+// class Admin extends User {
+//   access;
+  
+//   constructor(params) {
+//     super(params.email);
+//     this.access = params.access;
+
+//   }
+
+//   static role = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
+// }
+
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   access: Admin.role.SUPERUSER,
+// });
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.access); // "superuser"
+
+
+
+// class User {
+//   email;
+
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// class Admin extends User {
+//   blacklistedEmails = [];
+  
+//   static role = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
+
+//   constructor(params) {
+//     super(params.email);
+//     this.access = params.access;
+//   }
+
+//   blacklist(email) {
+//     this.blacklistedEmails.push(email);
+//   }
+
+//   isBlacklisted(email){
+//     return this.blacklistedEmails.includes(email);
+//   }
+// }
+
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   access: Admin.role.SUPERUSER,
+// });
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.access); // "superuser"
+
+// mango.blacklist("poly@mail.com");
+// console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+// console.log(mango.isBlacklisted("mango@mail.com")); // false
+// console.log(mango.isBlacklisted("poly@mail.com")); // true
