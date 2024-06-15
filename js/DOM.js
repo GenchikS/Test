@@ -23,6 +23,7 @@
 // console.log(items)
 // const items = document.querySelectorAll('.js-item')
 // console.log(items)
+
 // Перетворення колекції до масиву
 
 // console.log(Array.from(items))
@@ -170,6 +171,7 @@
 // *******Варіант-1******* \\
 
 // const list = document.querySelector(".js-list");
+
 // function createMarkup(arr) {
 //   return arr.map(({ id, model, type, price, img }) => {
 //     const liEL = document.createElement("li");
@@ -238,41 +240,41 @@
 
 
 //  приклад нажаття та відображення кнопок
-// const clearLogBtn = document.querySelector(".js-clear");
-// const logList = document.querySelector(".log-list");
-// let keypressCounter = 1;
+const clearLogBtn = document.querySelector(".js-clear");
+const logList = document.querySelector(".log-list");
+let keypressCounter = 1;
 
-// console.log(clearLogBtn)
+console.log(clearLogBtn)
 
-// document.addEventListener("keydown", logMessage);
-// document.addEventListener("keyup", logMessage);
-// clearLogBtn.addEventListener("click", reset);
+document.addEventListener("keydown", logMessage);
+document.addEventListener("keyup", logMessage);
+clearLogBtn.addEventListener("click", reset);
 
-// function logMessage({ type, key, code }) {
-//   const markup = `<div class="log-item">
-//     <span class="chip">${keypressCounter}</span>
-//     <ul>
-//       <li><b>Event</b>: ${type}</li>
-//       <li><b>Key</b>: ${key}</li>
-//       <li><b>Code</b>: ${code}</li>
-//     </ul>
-//   </div>`;
+function logMessage({ type, key, code }) {
+  const markup = `<div class="log-item">
+    <span class="chip">${keypressCounter}</span>
+    <ul>
+      <li><b>Event</b>: ${type}</li>
+      <li><b>Key</b>: ${key}</li>
+      <li><b>Code</b>: ${code}</li>
+    </ul>
+  </div>`;
 
-//   logList.insertAdjacentHTML("afterbegin", markup);
+  logList.insertAdjacentHTML("afterbegin", markup);
 
-//   if (type === "keyup") {
-//     incrementKeypressCounter();
-//   }
-// }
+  if (type === "keyup") {
+    incrementKeypressCounter();
+  }
+}
 
-// function reset() {
-//   keypressCounter = 1;
-//   logList.innerHTML = "";
-// }
+function reset() {
+  keypressCounter = 1;
+  logList.innerHTML = "";
+}
 
-// function incrementKeypressCounter() {
-//   keypressCounter += 1;
-// }
+function incrementKeypressCounter() {
+  keypressCounter += 1;
+}
 
 
 
@@ -306,7 +308,7 @@
 //     const selectedOptionValue = event.currentTarget.value;
 //     console.log(selectedOptionValue);  //  виводить назву вибору
 //     const selectedOptionIndex = event.currentTarget.selectedIndex;
-//     // console.log(sele ctedOptionIndex);  //  виводить індекс елементу
+//     console.log(selectedOptionIndex);  //  виводить індекс елементу
 //   const selectedOptionText =
 //         event.currentTarget.options[selectedOptionIndex].text;
 //     console.log(selectedOptionText);
