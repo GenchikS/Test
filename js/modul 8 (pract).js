@@ -25,23 +25,24 @@
 // інформацією про те, яка кнопка була натиснута скільки разів.
 
 
-const refs = {
-    statList: document.querySelector(`.statList`),  //  загальний батько кнопок
-    resultButton: document.querySelector(`#resultBatton`),
-    resultSection: document.querySelector(`#resultSection`)
-}
+// const refs = {
+//     statList: document.querySelector(`.statList`),  //  загальний батько кнопок
+//     resultButton: document.querySelector(`#resultBatton`),
+//     resultSection: document.querySelector(`#resultSection`)
+// }
 
-let totalSum = 0;
-const clickStat = {};
+// let totalSum = 0;
+// const clickStat = {};
 
-refs.statList.addEventListener(`click`, onStatlistButton);
+// refs.statList.addEventListener(`click`, onStatlistButton);
 
-function onStatlistButton(event) {
-    const number = Number(event.target.dataset.number);
-    totalSum += number;
+// function onStatlistButton(event) {
+//     const number = Number(event.target.dataset.number);  //  якщо не привести до числа, то буду string  та додаватися в сточку
+//     // console.log(`number:`, number);  //  перевірка та приведення до числа Number(event.target.dataset.number)
+//     totalSum += number;
    
-clickStat[event.target.textContent] = (clickStat[event.target.textContent] поставити або 0) + 1;
-console.log(totalSum)
-console.log(clickStat) 
-}
+// clickStat[event.target.textContent] = (clickStat[event.target.textContent] || 0) + 1;
+// console.log(totalSum)
+// console.log(clickStat) 
+// }
 
