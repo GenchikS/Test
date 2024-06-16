@@ -94,20 +94,74 @@ const instance = basicLightbox.create(`
 })
 
 // instance.show();  //  виклик ф-ції
-instance.show(() => console.log('lightbox now visible')); //  виклик ф-ції з виводом тексту
+// instance.show(() => console.log('lightbox now visible')); //  виклик ф-ції з виводом тексту
 
-const buttonClick = document.querySelector(`.button-click`);  //  достукалися до кнопки
+// const buttonClick = document.querySelector(`.button-click`);  //  достукалися до кнопки
 
-// buttonClick.addEventListener(`click`, () => {  //  прослуховування кліку та стрілочна ф-ція виклику бібліотеки
+//  прослуховування кліку та стрілочна ф-ція виклику бібліотеки
+// buttonClick.addEventListener(`click`, () => {  
 //     instance.close(() => console.log('lightbox not visible anymore'))
 // });
 
 // прослуховування кліку звичайна ф-ція виклику бібліотеки
-buttonClick.addEventListener(`click`, closeInstance);
+// buttonClick.addEventListener(`click`, closeInstance);
 
-function closeInstance(){
-    console.log('lightbox now visible', instance.close());
-}
+// function closeInstance(){
+//     console.log('lightbox now close');
+//     return instance.close()
+// }
 
 // виклик бібліотеки
-// instance.close(() => console.log('lightbox not visible anymore'))  //  закривання тексту стрілочною ц-ією
+// instance.close(() => console.log('lightbox not visible anymore'))  //  закривання тексту стрілочною ф-цією
+
+
+// звичайний приклад об'єкту
+// const user = { 
+// 	name: "Jacob", 
+// 	age: 32 
+// };
+
+// console.log(user.name); // Jacob
+// console.log(user.age); // 32
+
+// приклад деструкторізації об'єкту
+// const user = { 
+// 	name: "Jacob", 
+// 	age: 32 
+// };
+
+// const { name, age } = user;
+// console.log(name); // Jacob
+// console.log(age); // 32
+
+// без деструктурізації
+// const book = {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["historical prose", "adventure"],
+//     isPublic: false,// true,  
+//     rating: 8.38,
+//   };
+  
+//   const accessType = book.isPublic ? "pulbic" : "private";  //  приклад тернарного оператора на true. Якщо true, то виконується "pulbic"
+//   const message = `Book ${book.title} by author ${book.author} with rating ${book.rating} is in ${accessType} access!`;
+// console.log(accessType);
+// console.log(message)
+
+// Деструктурізація
+// const book = {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["historical prose", "adventure"],
+//     isPublic: true,
+//     rating: 8.38,
+//   };
+  
+//   // Деструктуризуємо
+//   const { title, author, isPublic, rating } = book;
+  
+//   // Використовуємо
+//   const accessType = isPublic ? "pulbic" : "private";
+//   const message = `Book ${title} by author ${author} with rating ${rating} is in ${accessType} access!`;
+//   console.log(accessType);
+// console.log(message)
