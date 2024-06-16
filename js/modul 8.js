@@ -34,64 +34,64 @@
 
 
 // приклад генерації боксів та кольору 
-// const colorPalette = document.querySelector(".color-palette");
-// const output = document.querySelector(".output");
+const colorPalette = document.querySelector(".color-palette");
+const output = document.querySelector(".output");
 
-// colorPalette.addEventListener("click", selectColor);
+colorPalette.addEventListener("click", selectColor);
 
-// делегування 
-// function selectColor(event) {
-//   if (event.target.nodeName !== "BUTTON") {  //  не дорівнює кнопкі
-//     return;
-//   }
+// делегування (приклад генерації боксів та кольору)
+function selectColor(event) {
+  if (event.target.nodeName !== "BUTTON") {  //  не дорівнює кнопкі
+    return;
+  }
 
-//   const selectedColor = event.target.dataset.color; 
-//   output.textContent = `Selected color: ${selectedColor}`;
-//   output.style.color = selectedColor;
-// }
+  const selectedColor = event.target.dataset.color; 
+  output.textContent = `Selected color: ${selectedColor}`;
+  output.style.color = selectedColor;
+}
 
-// // додаткові ф-ції для візуализація елементів
-// createPaletteItems(); 
+// // додаткові ф-ції для візуализація елементів (приклад генерації боксів та кольору)
+createPaletteItems(); 
 
-// function createPaletteItems() {
-//   const items = [];   //  створення порожнього массиву
-//   for (let i = 0; i < 60; i++) {  //  макс 60 елементів
-//     const color = getRandomHexColor();  // присвоєння змінній color значення виклику ф-ції
-//     const item = document.createElement("button");  //  створення кнопки button
-//     item.type = "button";  //  створення type кнопки button
-//     item.dataset.color = color;   //  додавання значення атребуту data з різним кольором
-//     // console.log(item.dataset.color);  
-//     item.style.backgroundColor = color;  //  присвоєння зміни стилю color
-//     item.classList.add("item");  //  додавання класу
-//     items.push(item);  //  наповнення масиву
-//   }
-//   colorPalette.append(...items);  //  додавання всього масиву відразу
-// }
+function createPaletteItems() {
+  const items = [];   //  створення порожнього массиву
+  for (let i = 0; i < 60; i++) {  //  макс 60 елементів
+    const color = getRandomHexColor();  // присвоєння змінній color значення виклику ф-ції
+    const item = document.createElement("button");  //  створення кнопки button
+    item.type = "button";  //  створення type кнопки button
+    item.dataset.color = color;   //  додавання значення атребуту data з різним кольором
+    // console.log(item.dataset.color);  
+    item.style.backgroundColor = color;  //  присвоєння зміни стилю color
+    item.classList.add("item");  //  додавання класу
+    items.push(item);  //  наповнення масиву
+  }
+  colorPalette.append(...items);  //  додавання всього масиву відразу
+}
 
-// function getRandomHexColor() {
-//   const letters = "0123456789ABCDEF";
-//   let color = "#";
+function getRandomHexColor() {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
 
-//   for (let i = 0; i < 6; i++) {
-//     color += letters[Math.floor(Math.random() * 16)];
-//   }
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
 
-//   return color;
-// }
+  return color;
+}
 
 
 // підключення бібліотеки
-console.log(_);
-console.log(_.sum([2, 3, 5, 5, 6, 2]));   //  приклад роботи бібліотеки, знаходить загальну суму масиву
-console.log(_.shuffle([1, 2, 3, 4]))  //  створює масив перетасованих значень
+// console.log(_);
+// console.log(_.sum([2, 3, 5, 5, 6, 2]));   //  приклад роботи бібліотеки, знаходить загальну суму масиву
+// console.log(_.shuffle([1, 2, 3, 4]))  //  створює масив перетасованих значень
 
 
-const instance = basicLightbox.create(`
-	<h1>Not closable</h1>
-	<p>It's not possible to close this lightbox with a click.</p>
-`, {
-	closable: false
-})
+// const instance = basicLightbox.create(`
+// 	<h1>Not closable</h1>
+// 	<p>It's not possible to close this lightbox with a click.</p>
+// `, {
+// 	closable: false
+// })
 
 // instance.show();  //  виклик ф-ції
 // instance.show(() => console.log('lightbox now visible')); //  виклик ф-ції з виводом тексту
