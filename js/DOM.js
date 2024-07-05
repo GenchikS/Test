@@ -130,43 +130,43 @@
 // Варіант-2
 // Створи розмітку використовуючи приклад шаблонної розмітки
 
-const cars = [
-  {
-    id: 1,
-    model: "Honda",
-    type: "Civic",
-    price: 12000,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU",
-  },
-  {
-    id: 2,
-    model: "Audi",
-    type: "Q7",
-    price: 40000,
-    img: "https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg",
-  },
-  {
-    id: 3,
-    model: "BMW",
-    type: "5 series",
-    price: 9000,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU",
-  },
-  {
-    id: 4,
-    model: "Honda",
-    type: "Accord",
-    price: 20000,
-    img: "https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg",
-  },
-  {
-    id: 5,
-    model: "Volvo",
-    type: "XC60",
-    price: 7000,
-    img: "https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320",
-  },
-];
+// const cars = [
+//   {
+//     id: 1,
+//     model: "Honda",
+//     type: "Civic",
+//     price: 12000,
+//     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU",
+//   },
+//   {
+//     id: 2,
+//     model: "Audi",
+//     type: "Q7",
+//     price: 40000,
+//     img: "https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg",
+//   },
+//   {
+//     id: 3,
+//     model: "BMW",
+//     type: "5 series",
+//     price: 9000,
+//     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU",
+//   },
+//   {
+//     id: 4,
+//     model: "Honda",
+//     type: "Accord",
+//     price: 20000,
+//     img: "https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg",
+//   },
+//   {
+//     id: 5,
+//     model: "Volvo",
+//     type: "XC60",
+//     price: 7000,
+//     img: "https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320",
+//   },
+// ];
 
 // *******Варіант-1******* \\
 
@@ -197,7 +197,7 @@ const cars = [
 // list.append(...createMarkup(cars))
 
 // *******Варіант-2******* \\
-const list = document.querySelector(".js-list");
+// const list = document.querySelector(".js-list");
 
 function createMarkup(arr) {
   return arr.map(
@@ -240,41 +240,41 @@ list.insertAdjacentHTML('afterbegin', createMarkup(cars))
 
 
 //  приклад нажаття та відображення кнопок
-const clearLogBtn = document.querySelector(".js-clear");
-const logList = document.querySelector(".log-list");
-let keypressCounter = 1;
+// const clearLogBtn = document.querySelector(".js-clear");
+// const logList = document.querySelector(".log-list");
+// let keypressCounter = 1;
 
-console.log(clearLogBtn)
+// console.log(clearLogBtn)
 
-document.addEventListener("keydown", logMessage);
-document.addEventListener("keyup", logMessage);
-clearLogBtn.addEventListener("click", reset);
+// document.addEventListener("keydown", logMessage);
+// document.addEventListener("keyup", logMessage);
+// clearLogBtn.addEventListener("click", reset);
 
-function logMessage({ type, key, code }) {
-  const markup = `<div class="log-item">
-    <span class="chip">${keypressCounter}</span>
-    <ul>
-      <li><b>Event</b>: ${type}</li>
-      <li><b>Key</b>: ${key}</li>
-      <li><b>Code</b>: ${code}</li>
-    </ul>
-  </div>`;
+// function logMessage({ type, key, code }) {
+//   const markup = `<div class="log-item">
+//     <span class="chip">${keypressCounter}</span>
+//     <ul>
+//       <li><b>Event</b>: ${type}</li>
+//       <li><b>Key</b>: ${key}</li>
+//       <li><b>Code</b>: ${code}</li>
+//     </ul>
+//   </div>`;
 
-  logList.insertAdjacentHTML("afterbegin", markup);
+//   logList.insertAdjacentHTML("afterbegin", markup);
 
-  if (type === "keyup") {
-    incrementKeypressCounter();
-  }
-}
+//   if (type === "keyup") {
+//     incrementKeypressCounter();
+//   }
+// }
 
-function reset() {
-  keypressCounter = 1;
-  logList.innerHTML = "";
-}
+// function reset() {
+//   keypressCounter = 1;
+//   logList.innerHTML = "";
+// }
 
-function incrementKeypressCounter() {
-  keypressCounter += 1;
-}
+// function incrementKeypressCounter() {
+//   keypressCounter += 1;
+// }
 
 
 
@@ -319,12 +319,12 @@ function incrementKeypressCounter() {
 
 
 // приклад події input, відбувається при кожній зміні введеного значення
-// const textInput = document.querySelector(".text-input");
-// const output = document.querySelector(".output");
+const textInput = document.querySelector(".text-input");
+const output = document.querySelector(".output");
 
-// textInput.addEventListener("input", (event) => {
-//   output.textContent = event.currentTarget.value;
-// });
+textInput.addEventListener("input", (event) => {
+  output.textContent = event.currentTarget.value;
+});
 
 
 
