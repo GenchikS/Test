@@ -1,39 +1,54 @@
-// const fruits = ["apple", "plum", "pear", "orange"];
-// const firstElement = fruits[0];
-// console.log(firstElement);
-// const secondElement = fruits[1];
-// console.log(secondElement);
-// const lastElement = fruits[3];
-// console.log(lastElement);
+// ------    Оголошення ф-ції та збереження результату у змінну
+
+// function multiply(x, y, z) {
+// const product = x * y * z; 
+// return product;     // Повертаємо результат виразу множення
+// } 
+
+// const result = multiply(2, 3, 5);   // Результат роботи функції можна зберегти у змінну
+// const abc = multiply(2, 3, 4)
+// console.log(result, abc);  // 30
 
 
 
-// function getOrderQuantity(order) {
-//     console.log(order.length);
-//     // console.log(order[order.length - 1]);
-//     return order.length;
-// }
-// console.log(getOrderQuantity(["apple", "peach", "pear", "banana"]));
-// console.log(getOrderQuantity(["apple", "banana", "pear"]));
+// ----       Уникнути оголошення зайвої змінної в тілі функції, можна відразу ж повертати результат виразу
+
+// function multiply(x, y, z) { 
+// return x * y * z; 
+// } 
+
+// const result = multiply(2, 3, 5); 
+// console.log(result); // 30
 
 
-// function getLastElementMeta(array) {
-//     const getLastElementNew = [array.length - 1, array[array.length - 1]];
-//     return getLastElementNew;
-// }
+//  -----  Якщо в тілі функції відсутній оператор return або він не вказує на конкретне значення, функція поверне спеціальне значення undefined.
 
-// console.log(getLastElementMeta(["apple", "peach", "pear", "banana"]));
-// console.log(getLastElementMeta(["apple", "peach", "pear"]));
+// function multiply(x, y, z) {  
+// const product = x * y * z; 
+// } 
+
+// const result = multiply(2, 3, 5); 
+// console.log(result); // undefined
+
+
+// -----  Псевдомасив аргументів які передаються у ф-цію. Можна завжди подивитися, що приходить аргументом, також має lenght
+
+// function sum(a, b) { 
+//     console.log(arguments); 
+//     console.log("length", arguments.length);
+// return a + b; 
+// } 
+
+// console.log(sum(2, 5));
 
 
 
-// function getExtremeElements(array) {
-//     const getExtremeNew = [array[0], array[array.length - 1]];
-//     return getExtremeNew;
-// }
 
-// console.log(getExtremeElements([1, 2, 3, 4, 5]));
-// console.log(getExtremeElements(["Earth", "Mars", "Venus"]));
+
+
+
+
+
 
 
 // function getLength(array) {
