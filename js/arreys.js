@@ -8,6 +8,16 @@
 // console.log(lastElement);
 
 
+//  ----    приклад звернення до елементів (перший та останній)
+// function getExtremeElements(array) {
+//     const getExtremeNew = [array[0], array[array.length - 1]];
+//     return getExtremeNew;
+// }
+
+// console.log(getExtremeElements([1, 2, 3, 4, 5]));
+// console.log(getExtremeElements(["Earth", "Mars", "Venus"]));
+
+
 
 //  довжина масиву
 // function getOrderQuantity(order) {
@@ -39,11 +49,3 @@
 // console.log(planets); // ['Jupiter', 'Mars', 'Neptune', 'Uranus']
 
 
-//  ----    приклад звернення до елементів (перший та останній)
-// function getExtremeElements(array) {
-//     const getExtremeNew = [array[0], array[array.length - 1]];
-//     return getExtremeNew;
-// }
-
-// console.log(getExtremeElements([1, 2, 3, 4, 5]));
-// console.log(getExtremeElements(["Earth", "Mars", "Venus"]));
