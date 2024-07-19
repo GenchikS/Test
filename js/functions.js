@@ -1,9 +1,9 @@
 // ------    Оголошення ф-ції та збереження результату у змінну
 
 // function multiply(x, y, z) {
-// const product = x * y * z; 
+// const product = x * y * z;
 // return product;     // Повертаємо результат виразу множення
-// } 
+// }
 
 // const result = multiply(2, 3, 5);   // Результат роботи функції можна зберегти у змінну
 // const abc = multiply(2, 3, 4)
@@ -13,36 +13,54 @@
 
 // ----       Уникнути оголошення зайвої змінної в тілі функції, можна відразу ж повертати результат виразу
 
-// function multiply(x, y, z) { 
-// return x * y * z; 
-// } 
+// function multiply(x, y, z) {
+// return x * y * z;
+// }
 
-// const result = multiply(2, 3, 5); 
+// const result = multiply(2, 3, 5);
 // console.log(result); // 30
 
 
 //  -----  Якщо в тілі функції відсутній оператор return або він не вказує на конкретне значення, функція поверне спеціальне значення undefined.
 
-// function multiply(x, y, z) {  
-// const product = x * y * z; 
-// } 
+// function multiply(x, y, z) {
+// const product = x * y * z;
+// }
 
-// const result = multiply(2, 3, 5); 
+// const result = multiply(2, 3, 5);
 // console.log(result); // undefined
 
 
 // -----  Псевдомасив аргументів які передаються у ф-цію. Можна завжди подивитися, що приходить аргументом, також має lenght
 
-// function sum(a, b) { 
-//     console.log(arguments); 
+// function sum(a, b) {
+//     console.log(arguments);
 //     console.log("length", arguments.length);
-// return a + b; 
-// } 
+// return a + b;
+// }
 
 // console.log(sum(2, 5));
 
 
+// -----   передача декількох параметрів у ф-цію. Якщо не прийшов параметр step, то step=1 за замовчуванням
+// function count(from, to, step = 1) {
+//   console.log(`from: ${from}, to: ${to}, step: ${step}`);
 
+//   for (let i = from; i <= to; i += step) {
+//   // ... 
+//   }
+// }
+
+// count(1, 15, 4); // "from: 1, to: 15, step: 4"
+// count(1, 15); // "from: 1, to: 15, step: 1"
+
+
+//  -----   function expression коли змінна отримує значення ф-ції  ---------
+// const multiply = function (x, y, z) {
+//   console.log(x * y * z);  //  30
+// };
+
+// multiply(2, 3, 5)  //  працює лише після оголошення ф-ції
 
 
 
