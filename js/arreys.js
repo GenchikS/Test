@@ -118,12 +118,12 @@
 
 
 //  -----  приклад перебору масива for of, якщо не потрібен лічильник i -----
-const arr = ["Gena", "Sergey", "Mikhail Parmatov", "Nikolai", "Masha", "Dariya"];
-for (const elem of arr) {
-    if (elem.includes("Sergey") || elem.includes("Nikolai")) {
-        console.log("name:", elem);
-    }
-}
+// const arr = ["Gena", "Sergey", "Mikhail Parmatov", "Nikolai", "Masha", "Dariya"];
+// for (const elem of arr) {
+//     if (elem.includes("Sergey") || elem.includes("Nikolai")) {
+//         console.log("name:", elem);
+//     }
+// }
 
 
 

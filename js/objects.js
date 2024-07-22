@@ -12,6 +12,8 @@
 //     }
 // };
 
+// apartment.owner.email = "new@google.com";  //  перевизначення значення ключа
+
 // const aptRating = apartment.rating;
 // const aptDescr = apartment.descr;
 // const aptPrice = apartment.price;
@@ -21,7 +23,9 @@
 // const lastTag = apartment.tags[apartment.tags.length - 1]; // !!!
 // const ownerName = apartment.owner.name;
 // const ownerPhone = apartment.owner.phone;
-// const ownerEmail = apartment.owner.email;
+// let ownerEmail = apartment.owner.email;
+
+// // ownerEmail = "new@google.com";
 
 // console.log(aptRating);
 // console.log(aptDescr);
@@ -71,17 +75,23 @@
 // console.log(apartment.tags);
 
 
-
+ 
 // перевизначення заздалегідь невідомого ключа
-// const emailInputName = "email";
+// let emailInputName = "email";
 // const passwordInputName = "password";
 
 // const credentials = {
-//   [emailInputName]: "henry.carter@aptmail.com",
+//   [emailInputName]: "henry.carter@aptmail.com",  //  в [] записується змінна
 //   [passwordInputName]: "jqueryismyjam",
 // };
 
+// console.log("credentials", credentials)
 
+// const key = Object.keys(credentials);
+// console.log("key", key[0])  //  перевірка ключів об'єкту
+
+
+// метод hasOwnProperty
 // const obj = {
 //   width: 300,
 //   height: 200,
@@ -90,8 +100,8 @@
 
 // for (let key in obj) {
 //   if(obj.hasOwnProperty(key)){
-//     console.log(`${key}`);
-//     // console.log(`${key} : ${obj[key]}`)
+//     // console.log(`${key}`);
+//     console.log(`${key} : ${obj[key]}`)
 //   }
 // }
 
@@ -105,10 +115,24 @@
 // const keys = [];
 // const values = [];
 
+// console.log("keys", Object.keys(apartment));  //  вивід всіх ключів в масив
+// console.log("values", Object.values(apartment));  //  вивід всіх значень ключів в масив
+
+
 // for (const key in apartment) {
-//   // console.log(apartment[key]);
+//   console.log(key);  //  звернення до назви ключа
 //   keys.push(key);
-//   values.push(apartment[key]);
+
+//   console.log(apartment.descr);  //  звернення до значення ключа
+//   // console.log(apartment[key]);  //  //  звернення до значення ключа, при умові невідомої назви ключа
+//   // console.log(values);  //  виведення масива values
+//   // values.push(apartment[key]);  //  додавання невідомого значення ключа в об'єкті apartment (apartment[key])
+
+//   if (key === "price") {  //  зміна певного значення ключа за умови
+//     const newSum = apartment[key] * 2;
+//     values.push(newSum);
+    
+//   }
 // }
 // console.log(keys);
 // console.log(values);
@@ -130,41 +154,47 @@
 // console.log(values);
 
 
-
-// function countProps(object) {
 // варіант 1
-  // let propCount = 0;
+// function countProps(object) {
+//   let propCount = 0;
   
   // for (const key in object) {
   //   if (object.hasOwnProperty(key)) {
   //     propCount += 1;
   //   }
   // }
-// return propCount; // варіант 1
+  // return propCount;
+
 // варіант 2
 //   const countPropsSum = Object.keys(object);
 //   const values = Object.values(object);
-//   console.log(values);
-//   return countPropsSum.length;
+//   console.log(countPropsSum);  //  вивід властивостей 
+//   console.log(values);  //  вивід значень властивостей
+//   return countPropsSum.length;  //  вивід довжини масиву властивостей (ключів)
 // }
+
 // console.log(countProps({}));
 // console.log(countProps({ name: "Mango", age: 2 }));
 // console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 }));
 
-
+//  приклад вивід загальної суми значень властивостей
 // function countTotalSalary(salaries) {
 //   let totalSalary = 0;
-//   const SalaryObj = Object.values(salaries);
+//   const SalaryObj = Object.values(salaries);  //  створення масиву значень властивостей
+//   console.log("SalaryObj", SalaryObj)
   
-//   for (const key of SalaryObj) {
-//     totalSalary = totalSalary + key;
-//   }
+//   // for (const key of SalaryObj) {
+//     // totalSalary = totalSalary + key;
+//   // }
 //   return totalSalary;
 // }
 
 // console.log(countTotalSalary({}));
 // console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));
 // console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));
+
+
+
 
 
 // const books = [
